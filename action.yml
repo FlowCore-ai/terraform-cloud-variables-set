@@ -1,0 +1,22 @@
+name: "tf-cloud-var-set"
+description: "Add/update variable in a Terraform Cloud Workspace"
+author: flowcore-ai-ltd
+inputs:
+  TERRAFORM_WORKSPACE_ID:
+    description: 'Terraform workspace ID'
+    required: true
+  TERRAFORM_ACCESS_TOKEN:
+    description: 'Terraform access token'
+    required: true
+  TERRAFORM_VARIABLES_FILE:
+    description: 'Path to the Terraform variables JSON file'
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.TERRAFORM_VARIABLES_FILE }}
+
+branding:
+  icon: refresh-cw
+  color: green
