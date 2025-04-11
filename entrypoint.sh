@@ -8,6 +8,7 @@ INPUT_TERRAFORM_VARIABLES="$1"
 
 # Check if the file exists
 if [ ! -f "$INPUT_TERRAFORM_VARIABLES" ]; then
+  ls -la
   echo "Error: file $INPUT_TERRAFORM_VARIABLES does not exist."
   exit 1
 fi
