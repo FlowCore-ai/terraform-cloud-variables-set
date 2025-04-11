@@ -6,9 +6,13 @@ set -e
 # Get the file path from the input
 INPUT_TERRAFORM_VARIABLES="$1"
 
+echo "The file path is $INPUT_TERRAFORM_VARIABLES"
+
 # Check if the file exists
 if [ ! -f "$INPUT_TERRAFORM_VARIABLES" ]; then
-  ls -la
+  echo `ls -la`
+  echo `pwd`
+  echo `ls -la /github/workspace`
   echo "Error: file $INPUT_TERRAFORM_VARIABLES does not exist."
   exit 1
 fi
