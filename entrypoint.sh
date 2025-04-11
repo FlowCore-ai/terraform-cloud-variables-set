@@ -8,6 +8,10 @@ INPUT_TERRAFORM_VARIABLES="$1"
 
 echo "The file path is $INPUT_TERRAFORM_VARIABLES"
 
+echo `ls -la`
+echo `pwd`
+echo `ls -la /github/workspace`
+
 # Check if the file exists
 if [ ! -f "$INPUT_TERRAFORM_VARIABLES" ]; then
   echo `ls -la`
